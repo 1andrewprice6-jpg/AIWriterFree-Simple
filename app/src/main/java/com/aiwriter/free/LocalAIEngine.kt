@@ -217,6 +217,8 @@ $text"""
             TextTask.ADD_CITATIONS -> """${contextPrefix}Add proper citations to claims in the following text using the sources provided above. Return the text with [Source N] citations:
 
 $text"""
+            
+            else -> ""  // Formatting tasks don't need prompts
         }
     }
     
