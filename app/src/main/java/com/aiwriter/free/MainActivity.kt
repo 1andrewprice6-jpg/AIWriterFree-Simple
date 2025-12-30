@@ -29,26 +29,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var progressText: TextView
     
     private var isDownloading = false
-                }
-                
-                override fun onComplete(success: Boolean) {
-                    runOnUiThread {
-                        if (success) {
-                            scope.launch {
-                                aiEngine.initialize()
-                                statusText.text = "✓ Download Complete!\n\nAI Writer is ready to use."
-                                downloadButton.visibility = View.GONE
-                                progressBar.visibility = View.GONE
-                                progressText.visibility = View.GONE
-                            }
-                        } else {
-                            statusText.text = "Download failed. Please try again."
-                            downloadButton.isEnabled = true
-                            progressBar.visibility = View.GONE
-                            progressText.visibility = View.GONE
-                        }
-                    }
-
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,8 +47,6 @@ class MainActivity : AppCompatActivity() {
         
         updateUI()
     }
-    
-
     
     private fun updateUI() {
         if (aiEngine.isModelDownloaded()) {
@@ -133,6 +111,7 @@ class MainActivity : AppCompatActivity() {
                 
                 withContext(Dispatchers.Main) {
                     Toast.makeText(this@MainActivity, "Download complete! Initializing...", Toast.LENGTH_SHORT).show()
+                    aiEngine.initialize()
                     updateUI()
                 }
             } catch (e: Exception) {
