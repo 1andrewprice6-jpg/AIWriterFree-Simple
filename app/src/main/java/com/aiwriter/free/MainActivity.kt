@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
                 val modelFile = File(filesDir, "qwen2.5-1.5b-q4.onnx")
                 val tempFile = File(filesDir, "qwen2.5-1.5b-q4.onnx.tmp")
                 
-                val url = URL("https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-ONNX/resolve/main/qwen2.5-1.5b-instruct-q4.onnx")
+                val url = URL("https://huggingface.co/onnx-community/Qwen2.5-0.5B/resolve/main/onnx/model_q4.onnx")
                 
                 withContext(Dispatchers.IO) {
                     val connection = url.openConnection() as HttpURLConnection
