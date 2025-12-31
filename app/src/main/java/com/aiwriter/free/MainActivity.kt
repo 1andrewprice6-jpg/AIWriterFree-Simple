@@ -74,8 +74,8 @@ class MainActivity : AppCompatActivity() {
         
         scope.launch {
             try {
-                val modelFile = File(filesDir, "qwen2.5-1.5b-q4.onnx")
-                val tempFile = File(filesDir, "qwen2.5-1.5b-q4.onnx.tmp")
+                val modelFile = File(filesDir, "model_q4.onnx")
+                val tempFile = File(filesDir, "model_q4.onnx.tmp")
                 
                 val url = URL("https://huggingface.co/onnx-community/Qwen2.5-0.5B/resolve/main/onnx/model_q4.onnx")
                 

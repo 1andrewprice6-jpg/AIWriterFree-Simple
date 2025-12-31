@@ -17,7 +17,7 @@ class LocalAIEngine(private val context: Context) {
     private val ragEngine = RAGEngine(context)
     private val formatter = TextFormatterService()
     private val modelPath: String
-        get() = "${context.filesDir}/qwen2.5-1.5b-q4.onnx"
+        get() = "${context.filesDir}/model_q4.onnx"
     
     companion object {
         private const val TAG = "LocalAIEngine"
